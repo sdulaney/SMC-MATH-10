@@ -1,0 +1,70 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{2}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{1}{Prove $x$ is odd if and only if $x^2 + 6x + 9$ is even.} 
+
+Strategy 1:  Since this problem is of the form $P \Leftrightarrow Q$. You must show $P \Rightarrow Q$ and $Q \Rightarrow P$.
+
+Strategy 2:  Using contrapositives (pg 8) You can instead prove $\lnot P \Leftrightarrow \lnot Q$ by showing $\lnot P \Rightarrow \lnot Q$ and $\lnot Q \Rightarrow \lnot P$.
+
+Strategy 3:  You can sometimes start with a known biconditional and connect ideas: $P \Leftrightarrow A_1$ but $A_1 \Leftrightarrow A_2$ etc...... $A_k \Leftrightarrow Q$ thus $P \Leftrightarrow Q$.
+
+\answer (using Strategy 1)
+
+Let $P =$ "$x$ is odd" and $Q =$ "$x^2 + 6x + 9$ is even".
+
+\part{Step 1} Show $P \Rightarrow Q$
+
+We assume that $P$ is true. By the definition of an odd integer, it follows that $x = 2k + 1$, where $k$ is some integer.
+This implies that:\\
+\begin{align*}
+  x^2 + 6x + 9 &= (2k + 1)^2 + 6(2k + 1) + 9 \\
+  &= (2k + 1)(2k + 1) + 12k + 6 + 9 \\
+  &= (4k^2 + 2k + 2k + 1) + 12k + 15 \\
+  &= 4k^2 + 16k + 16 \\
+  &= 2(2k^2 + 8k + 8) \\
+\end{align*}
+
+Because $x^2 + 6x + 9$ is $2t$, where $t$ is some integer $2k^2 + 8k + 8$, $x^2 + 6x + 9$ is even. This proves $P \Rightarrow Q$.
+
+\part{Step 2} Show $Q \Rightarrow P$
+
+We use a proof by contraposition and show $\lnot P \Rightarrow \lnot Q$. We assume $\lnot P$, namely, that $x$ is even. By the definition of an even integer, it follows that $x = 2m$, where $m$ is some integer. 
+This implies that:\\
+\begin{align*}
+  x^2 + 6x + 9 &= (2m)^2 + 6(2m) + 9 \\
+  &= 4m^2 + 12m + 9 \\
+  &= 4m^2 + 12m + 8 + 1 \\
+  &= 2(2m^2 + 6m + 4) + 1 \\
+\end{align*}
+
+Because $x^2 + 6x + 9$ is $2n + 1$, where $n$ is some integer $2m^2 + 6m + 4$, $x^2 + 6x + 9$ is odd. This proves $\lnot P \Rightarrow \lnot Q$, which tells us that $Q \Rightarrow P$ is also true. \\[\baselineskip]
+
+Because we have shown that both $P \Rightarrow Q$ and $Q \Rightarrow P$ are true, we have shown that $P \Leftrightarrow Q$ is true.
+
+\end{document}
