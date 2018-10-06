@@ -1,0 +1,43 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathabx}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{5}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{2}{Define $g: W \rightarrow W$ where $W$ is the whole numbers $\{0, 1, 2, 3...\}$ by $g(n) = \lfloor \frac{n}{2} \rfloor$. Determine if g is a bijection, surjection only, injection only, or none of these.}
+
+\answer
+
+g is not one-to-one because, for instance, $g(2) = \lfloor \frac{2}{2} \rfloor = \lfloor 1 \rfloor = 1$ and $g(3) = \lfloor \frac{3}{2} \rfloor = \lfloor 1.5 \rfloor = 1$ both map to the same value, $1$. That is, $n = 2$ and $n = 3$ are a counterexample to the statement $g$ is one-to-one. Therefore, $g$ is not one-to-one.\\[\baselineskip]
+
+Let $k$ be in the codomain. So $k \in W$ and $2k \in W$, $2k$ is in the domain, and $g(2k) = k$. Therefore, $g$ is onto.\\[\baselineskip]
+
+Thus, $g$ is a surjection only.\\[\baselineskip]
+
+\question{3}{Does the function in Problem (2) contradict the statement in Problem (1)? Why or why not?}
+
+No, because Problem (1) contains the premise that $A$ is finite. Therefore, the statement does not apply to Problem (2), because the set $W$ is infinite.
+
+\end{document}
