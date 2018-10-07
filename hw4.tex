@@ -36,10 +36,10 @@ Let $P =$ "$f: A \rightarrow A$", $Q =$ "$A$ is finite", $R =$ "$f$ is one-to-on
 
 \part{Step 1} Show $(P \land Q \land R) \Rightarrow S$
 
-We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land R)$ is true and $S$ is false, namely, that $f$ is one-to-one and $f$ is not onto. Let $a \in A$ be such that $f(b) \neq a$ for any $b \in A$. The definition of a function says each $a \in A$ must be assigned to a unique element of $A$, so we must have two elements in $A$ mapping to the same element. This contradicts the premise that f is one-to-one. $\Rightarrow\!\Leftarrow$
+We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land R)$ is true and $S$ is false, namely, that $f$ is one-to-one and $f$ is not onto. Because $A$ is finite, let its cardinality be $n$. Let $a \in A$ be such that $f(b) \neq a$ for any $b \in A$. Therefore, we have a mapping from $n$ elements to $n - 1$ elements. The definition of a function says each $a \in A$ must be assigned to a unique element of $A$, so we must have two elements in the domain mapping to the same element in the codomain. This contradicts the premise that f is one-to-one. $\Rightarrow\!\Leftarrow$
 
 \part{Step 2} Show $(P \land Q \land S) \Rightarrow R$
 
-We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land S)$ is true and $R$ is false, namely, that $f$ is onto and $f$ is not one-to-one. Let $a, b \in A$ be such that $f(a) = f(b)$ but $a \neq b$. However, this means two elements in $A$ map to the same element, so there are not enough elements left to map to each element of $A$. This contradicts the premise that f is onto. $\Rightarrow\!\Leftarrow$
+We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land S)$ is true and $R$ is false, namely, that $f$ is onto and $f$ is not one-to-one. Because $A$ is finite, let its cardinality be $n$. Let $a, b \in A$ be such that $f(a) = f(b)$ but $a \neq b$. Therefore, we have a mapping from $n$ elements to $n - 1$ elements. However, this means there must be one element of the codomain that is not mapped to by any element of the domain. This contradicts the premise that f is onto. $\Rightarrow\!\Leftarrow$
 
 \end{document}
