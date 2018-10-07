@@ -32,17 +32,15 @@ Since this problem is of the form $P \Leftrightarrow Q$, we must show $P \Righta
 
 \answer
 
-Let $U = \{1, 2, 3\}$, $M = 4$, and $p = 1$.
+Let $U = \{x_1, x_2, ..., x_n\}$ such that $x_1 \leq x_2 \leq ... \leq x_n$, and $m = x_n + 1$. Notice we can say $x_n$ is the maximum element in $U$ because $U$ is finite.
 
 \part{Step 1} Show $n \in U \Rightarrow n + p \in U$
 
-Since $n \geq M$, $n \geq 4$, and it follows that $n \in U$ is false. Therefore, this conditional statement is always true.
+Since $n \geq M$, it follows that $n > x_n$ and $n \in U$ is false because $n$ is not in the range $x_1 \leq k \leq x_n$. Therefore, $p$ can be any integer $p > 0$ and this conditional statement will always be true.\\[\baselineskip]
 
 \part{Step 2} Show $n + p \in U \Rightarrow n \in U$
 
-To prove this conditional statement is true, we use a proof by contraposition. We assume $n \notin U$, namely, that n has the values $4, 5, 6, 7, 8,...$ Therefore, it is trivial that $n + p \notin U$ because $n + 1$ has the values $5, 6, 7, 8, 9,...$ Thus, this conditional statement is also true.\\[\baselineskip]
-
-It should be noted that this proof only holds for finite sets of $W$.
+To prove this conditional statement is true, we use a proof by contraposition. We assume $n \notin U$, namely, that n has the values $m, m + 1, m + 2, ... = x_n + 1, x_n + 2, x_n + 3, ...$ because $n \geq m$. Therefore, $p$ can be any integer $p > 0$ and $n + p \notin U$ because $n + p > m > x_n$ is not in the range $x_1 \leq k \leq x_n$.\\[\baselineskip]
 
 \question{2}{Which is uncountable? Explain reasoning.\\[\baselineskip](a) Set of functions $f$ from the Natural numbers to the set $\{1, 2\}$\\ Hint: can view EACH f as sending some subset of the natural numbers to $1$ and the rest to $2$. Use this viewpoint to explain why there is a one to one correspondence between the functions in question and the subsets of the natural numbers. What is true about the subsets of the natural numbers?\\[\baselineskip](b) Set $T$ of functions $g$ from the set $\{1, 2\}$ to the set of Natural numbers.\\Hint: consider the set $A = \{ (g(1),g(2))$ for $g$ in $T \}$ What is the relation between $|T|$ and $|A|$?  In what superset does $A$ reside?} 
 
