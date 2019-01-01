@@ -1,0 +1,67 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathabx}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{6}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{1}{A subset $U$ of the set $W = \{0, 1, 2...\}$ of whole numbers is called ultimately periodic if there exists a number $M \geq 0$ and a number $p > 0$ such that for all integers $n \geq M$ the set $U$ has the property that $n \in U \iff n + p \in U$.\\[\baselineskip]Explain why every finite set of $W$ is ultimately periodic.} 
+
+Since this problem is of the form $P \Leftrightarrow Q$, we must show $P \Rightarrow Q$ and $Q \Rightarrow P$.\\[\baselineskip]
+
+\answer
+
+Let $U = \{x_1, x_2, ..., x_n\}$ such that $x_1 \leq x_2 \leq ... \leq x_n$, and $m = x_n + 1$. Notice we can say $x_n$ is the maximum element in $U$ because $U$ is finite.
+
+\part{Step 1} Show $n \in U \Rightarrow n + p \in U$
+
+Since $n \geq M$, it follows that $n > x_n$ and $n \in U$ is false because $n$ is not in the range $x_1 \leq k \leq x_n$. Therefore, $p$ can be any integer $p > 0$ and this conditional statement will always be true.\\[\baselineskip]
+
+\part{Step 2} Show $n + p \in U \Rightarrow n \in U$
+
+To prove this conditional statement is true, we use a proof by contraposition. We assume $n \notin U$, namely, that n has the values $m, m + 1, m + 2, ... = x_n + 1, x_n + 2, x_n + 3, ...$ because $n \geq m$. Therefore, $p$ can be any integer $p > 0$ and $n + p \notin U$ because $n + p > m > x_n$ is not in the range $x_1 \leq k \leq x_n$.\\[\baselineskip]
+
+\question{2}{Which is uncountable? Explain reasoning.\\[\baselineskip](a) Set of functions $f$ from the Natural numbers to the set $\{1, 2\}$\\ Hint: can view EACH f as sending some subset of the natural numbers to $1$ and the rest to $2$. Use this viewpoint to explain why there is a one to one correspondence between the functions in question and the subsets of the natural numbers. What is true about the subsets of the natural numbers?\\[\baselineskip](b) Set $T$ of functions $g$ from the set $\{1, 2\}$ to the set of Natural numbers.\\Hint: consider the set $A = \{ (g(1),g(2))$ for $g$ in $T \}$ What is the relation between $|T|$ and $|A|$?  In what superset does $A$ reside?} 
+
+\part{a} Let $U = \{f | f: \mathbb{N} \rightarrow \{1, 2\}\}$ and $\tau: U \rightarrow \mathcal{P}(\mathbb{N})$.\\[\baselineskip]
+
+We know that $\{x | f(x) = 1\} \cup \{y | f(y) = 2\} = \mathbb{N}$.\\[\baselineskip]
+
+These two sets are disjoint so $\{y | f(y) = 2\} = \overline{\{x | f(x) = 1\}}$. Let $A_f = \{y | f(y) = 2\}$ and $\tau(f) = A_f$. \\[\baselineskip]Let $B \subseteq \mathcal{P}(\mathbb{N})$ and we define $f$ as follows: if $x \in B$, $f(x) = 2$ and if $x \notin B$, $f(x) = 1$. So $\tau(f) = B$. Therefore, $\tau$ is onto.\\[\baselineskip] Let $\tau(f) = \tau(g)$. It follows that the preimage of $2$ is identical for $f$ and $g$. Because the subset of the natural numbers not being sent to $2$ must be sent to $1$, it follows that the preimage of $1$ is also identical for $f$ and $g$. Therefore, $\tau$ is one-to-one.\\[\baselineskip] $\tau$ is a bijection, so $|U| = |\mathcal{P}(\mathbb{N})|$. Since $|\mathcal{P}(\mathbb{N})| > |\mathbb{N}|$ and $\mathbb{N}$ is countable, $\mathcal{P}(\mathbb{N})$ is uncountable. Thus, it follows that $U$ is also uncountable.
+
+\part{b} Given $T = \{g | g: \{1, 2\} \rightarrow \mathbb{N}\}$ and $A = \{(g(1), g(2))$ for $g$ in $T\}$.\\[\baselineskip] 
+
+We define $\tau: T \rightarrow A$ and $\tau(g) = (g(1), g(2))$.\\[\baselineskip]
+
+Let $(g(1), g(2)) = (h(1), h(2))$. Then $g(1) = h(1)$ and $g(2) = h(2)$. Therefore, $g = h$ because there are only two points on the graph and they are equal. Thus, $\tau$ is one-to-one.\\[\baselineskip]
+
+Let $x \in A$. Then there exists $n$, $m$ in $\mathbb{N}$ with $x = (n, m)$. Notice $g(1) = n$ and $g(2) = m$ is a function from $\{1, 2\} \rightarrow \mathbb{N}$ and $\tau(g) = x$. Thus, $\tau$ is onto.\\[\baselineskip]
+
+$|T| = |A|$ because there is a bijection between $T$ and $A$.
+
+$A$ resides in the superset $\mathbb{N} \bigtimes \mathbb{N}$ because by the definition of cartesian product $\mathbb{N} \bigtimes \mathbb{N}$ is the set of all ordered pairs $(a, b)$ where $a \in \mathbb{N}$ and $b \in \mathbb{N}$.
+
+$\mathbb{N} \bigtimes \mathbb{N}$ is known to be countable and $A \subseteq \mathbb{N} \bigtimes \mathbb{N}$, so $A$ is also countable. Because $|T| = |A|$, $T$ is also countable. 
+
+\end{document}

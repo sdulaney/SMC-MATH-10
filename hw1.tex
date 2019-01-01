@@ -1,0 +1,97 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{1}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{1}{Negate each of the following statements:} 
+
+\part{a} It is Monday and it is snowing.
+
+\answer It is not Monday or it is not snowing.
+
+\part{b} This book is red or it was written in 1887.
+
+\answer This book is not red and it was not written in 1887.
+
+\part{c} If I tell you a joke, you will smile.
+
+\answer I tell you a joke and you do not smile.
+
+\question{2}{Let X="Fred has red hair.",  Y="Fred has freckles.", and Z="Fred likes to eat figs.".}
+
+\part{a} "Fred has red hair, and does not have freckles."
+
+\answer $X \land \lnot Y$
+
+\part{b} "Fred likes to eat figs, and he has red hair or he has a freckles."
+
+\answer $Z \land (X \lor Y)$
+
+\part{c} "It is not the case that Fred has freckles or he has red hair."
+
+\answer $\lnot (Y \lor X)$
+
+\part{d} "It is not the case that Fred has freckles, or he has red hair."
+
+\answer $(\lnot Y) \lor X \equiv \lnot Y \lor X$
+
+\clearpage
+
+\question{3}{Make a truth table for: $(P \rightarrow R) \lor \lnot(Q)$}
+
+\answer
+
+\begin{displaymath}  % start unumbered math environment
+  %
+  % Start a table in math mode.  The |c|c|c|c|c|c|c|c| string is a
+  % format string that says there will be 8 colunms in the table.  The
+  % c's indicate that the data in each column will be centered (use l
+  % for left justified and r for right justified).  The vertical bar
+  % means that lines will be drawn between columns.  The trailing
+  % \hline causes a horizontal line to be drawn across the top of the
+  % table.
+  %
+  \begin{array}{|c|c|c|c|c|c|c|c|}\hline
+    %
+    % Each row of the table consists of data separated by "&" symbols.
+    % Each row must end with "\\" to cause a newline.  A trailing
+    % \hline will cause a line to be drawn under the row.  A double
+    % \hline is often used to separate the table header from the rest
+    % of the table. 
+    %
+    P & Q & R & P \rightarrow R & \lnot Q & (P \rightarrow R) \lor \lnot Q\\\hline\hline
+    T & T & T & T & F & \mathbf{T}\\\hline
+    T & T & F & F & F & \mathbf{F}\\\hline
+    T & F & T & T & T & \mathbf{T}\\\hline
+    T & F & F & F & T & \mathbf{T}\\\hline
+    F & T & T & T & F & \mathbf{T}\\\hline
+    F & T & F & T & F & \mathbf{T}\\\hline
+    F & F & T & T & T & \mathbf{T}\\\hline
+    F & F & F & T & T & \mathbf{T}\\\hline
+  \end{array}
+\end{displaymath}
+
+\end{document}

@@ -1,0 +1,64 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm,mathabx}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{7}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{1}{Canada has a two dollar coin known as the "toonie." What is wrong with the following argument, which purports to prove (by induction) that any debt of $n > 1$ Canadian dollars can be repaid (exactly) with only toonies?\\[\baselineskip]Proof:\\[\baselineskip]Step 1. This argument starts with $N = 2$. Notice that a two­ dollar debt can be repaid with a single toonie. Thus, the assertion is true for $n = 2 = N$.\\[\baselineskip]Step 2: Now let $k \geq 2$ and suppose that the assertion is true for all $l$, $2 \leq l < k$. The goal is to show that the assertion is true for $n = k$. For this, apply the induction hypothesis to $k - 2$ and see that a ­$(k - 2)$-dollar debt can be repaid with toonies. Adding one more toonie allows one to repay $k$ dollars with only toonies, as required. By the Principal of Mathematical Induction, any debt of $n > 1$ dollars can be repaid with toonies.}
+
+\answer
+
+The problem with this argument is that in the inductive step, $l = k - 2$ is not necessarily in the range $2 \leq l < k$. For example, if $k = 3$, then $k - 2 = 3 - 2 = 1$ and the inductive hypothesis cannot be applied.
+
+\clearpage
+
+\question{2}{Use Mathematical induction to prove $3^{2n} - 1$ is divisible by $8$ for every $n \geq 1$.}
+
+\answer
+
+To construct the proof, let $P(n)$ denote the proposition: "$3^{2n} - 1$ is divisible by $8$".
+
+\part{BASIS STEP:}
+
+The statement $P(1)$ is true because $3^{2(1)} - 1 = 9 - 1 = 8$ is divisible by $8$. This completes the basis step.
+
+\part{INDUCTIVE STEP:}
+
+For the inductive hypothesis we assume that $P(k)$ is true. That is, we assume $3^{2k} - 1$ is divisible by $8$ for an arbitrary positive integer $k$. To complete the inductive step, we must show that when we assume the inductive hypothesis, it follows that $P(k + 1)$, the statement that $3^{2(k + 1)} - 1$ is divisible by $8$, is also true. That is, we must show that $3^{2(k + 1)} - 1$ is divisible by $8$.\\[\baselineskip]
+
+Note that:
+
+\begin{align*}
+    3^{2(k + 1)} - 1 &= 3^{2k + 2} - 1 \\
+    &= 3^2 \cdot 3^{2k} - 1 \\
+    &= 9 \cdot 3^{2k} - 1 \\
+    &= 8 \cdot 3^{2k} + 3^{2k} - 1
+\end{align*}
+
+We can now use the inductive hypothesis and parts (i) and (ii) of Theorem 1 from Section 4.1. By part (ii) of the theorem, we conclude the first term in this last sum is divisible by $8$. By the inductive hypothesis, $3^{2k} - 1$ is divisible by $8$. Hence, by part (i) of the theorem, we conclude that $8 \cdot 3^{2k} + 3^{2k} - 1 = 3^{2(k + 1)} - 1$ is divisible by $8$. This completes the inductive step.\\[\baselineskip]
+
+Because we have completed both the basis step and the inductive step, by the principle of mathematical induction we know that $3^{2n} - 1$ is divisible by $8$ for every $n \geq 1$.
+
+\end{document}

@@ -1,0 +1,45 @@
+% Stewart Dulaney
+% https://www.stewartdulaney.com
+% This document was adapted from the templates posted at the following sources:
+% https://www.cs.cmu.edu/~ckingsf/class/02-714/hw-template.tex
+% http://www.math-cs.gordon.edu/courses/mat231/handouts/truth-table-latex.tex
+%
+\documentclass[11pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+\setlength{\headheight}{13.6pt}
+\newcommand\question[2]{\vspace{.25in}\hrule\textbf{#1: #2}\vspace{.5em}\hrule\vspace{.10in}}
+\renewcommand\part[1]{\vspace{.10in}\textbf{(#1)}}
+\newcommand\answer{\vspace{.10in}\textbf{Answer: }}
+\pagestyle{fancyplain}
+\lhead{\textbf{\NAME\ (SID: \SID)}}
+\chead{\textbf{HW\HWNUM}}
+\rhead{MATH 10, \today}
+\begin{document}\raggedright
+%Section A==============Change the values below to match your information==================
+\newcommand\NAME{Stewart Dulaney}  % your name
+\newcommand\SID{1545566}     % your smc student id
+\newcommand\HWNUM{4}              % the homework number
+%Section B==============Put your answers to the questions below here=======================
+
+\question{1}{Prove if $f: A \rightarrow A$, where $A$ is finite. Then $f$ is one to one if and only if $f$ is onto.} 
+
+Since this problem is of the form $P \Leftrightarrow Q$, we must show $P \Rightarrow Q$ and $Q \Rightarrow P$.\\[\baselineskip]
+
+\answer
+
+Let $P =$ "$f: A \rightarrow A$", $Q =$ "$A$ is finite", $R =$ "$f$ is one-to-one", $S  =$ "$f$ is onto".
+
+\part{Step 1} Show $(P \land Q \land R) \Rightarrow S$
+
+We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land R)$ is true and $S$ is false, namely, that $f$ is one-to-one and $f$ is not onto. Because $A$ is finite, let its cardinality be $n$. Let $a \in A$ be such that $f(b) \neq a$ for any $b \in A$. Therefore, we have a mapping from $n$ elements to $n - 1$ elements. The definition of a function says each $a \in A$ must be assigned to a unique element of $A$, so we must have two elements in the domain mapping to the same element in the codomain. This contradicts the premise that f is one-to-one. $\Rightarrow\!\Leftarrow$
+
+\part{Step 2} Show $(P \land Q \land S) \Rightarrow R$
+
+We can use a proof by contradiction to prove this conditional statement. We assume $(P \land Q \land S)$ is true and $R$ is false, namely, that $f$ is onto and $f$ is not one-to-one. Because $A$ is finite, let its cardinality be $n$. Let $a, b \in A$ be such that $f(a) = f(b)$ but $a \neq b$. Therefore, we have a mapping from $n$ elements to $n - 1$ elements. However, this means there must be one element of the codomain that is not mapped to by any element of the domain. This contradicts the premise that f is onto. $\Rightarrow\!\Leftarrow$
+
+\end{document}
